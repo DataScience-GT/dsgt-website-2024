@@ -70,13 +70,21 @@
     border-radius: 15px;
 }
 
+.Center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .SponsorsFlex {
     display: flex;
     position: relative;
     gap: 1em;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
+    padding-top: 1em;
 }
 
 @media only screen and (max-width: 1000px) {
