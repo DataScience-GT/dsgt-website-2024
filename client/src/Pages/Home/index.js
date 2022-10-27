@@ -242,9 +242,9 @@ const Home = (params) => {
                     </Card>
                 </div>
             </Section>
-            <Section id="sponsors">
+            <Section id="companies">
+                    <Major type="b">Companies we work with</Major>
                 <div className={styles.Center}>
-                    <Major type="b">Sponsors</Major>
                 </div>
                 <div className={styles.SponsorsFlex}>
                     {Sponsors.map((sponsor) => (
