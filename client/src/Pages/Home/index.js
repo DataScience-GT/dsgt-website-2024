@@ -13,9 +13,14 @@ import Mini from "../../Components/Text/Mini";
 import Minor from "../../Components/Text/Minor";
 import Card from "../../Components/Card";
 import Footer from "../../Components/Footer";
+import LearnMore from "../../Components/LearnMore";
+import EventCard from "../../Components/EventCard";
 
 //import chart data
 import { ClassData, MajorData } from "../../assets/Data/demographics";
+
+//import content
+import { Sponsors } from "../../assets/Content/Sponsors";
 
 //import images
 import storm from "../../assets/images/logos/storm.png";
@@ -31,8 +36,8 @@ import slide0 from "../../assets/images/slides/slide0.jpg";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
-import LearnMore from "../../Components/LearnMore";
-import EventCard from "../../Components/EventCard";
+import SponsorCard from "../../Components/SponsorCard";
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Home = (params) => {
@@ -237,8 +242,20 @@ const Home = (params) => {
                     </Card>
                 </div>
             </Section>
+            <Section id="sponsors">
+                <Major type="b">Sponsors</Major>
+                <div className={styles.SponsorsFlex}>
+                    {Sponsors.map((sponsor) => (
+                        <SponsorCard
+                            logo={sponsor.logo}
+                            name={sponsor.name}
+                            link={sponsor.link}
+                        />
+                    ))}
+                </div>
+            </Section>
             <Section id="getinvolved">
-                <Major type="b">Get Involved</Major>
+                <Major type="a">Get Involved</Major>
                 <Mini>Check out these opportunities to get involved:</Mini>
                 <div className={styles.Cards}>
                     <EventCard
