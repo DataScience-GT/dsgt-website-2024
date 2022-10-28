@@ -13,12 +13,18 @@ const ironmountain = require("../images/sponsors/ironmountain-min.png");
 const wolfram = require("../images/sponsors/wolfram-min.png");
 const statefarm = require("../images/sponsors/statefarm.png");
 const captech = require("../images/sponsors/captech.png");
+const amazon = require("../images/sponsors/amazon.webp");
 
 export const Sponsors = [
     {
         name: "Accenture",
         logo: accenture,
         link: "https://www.accenture.com/",
+    },
+    {
+        name: "Amazon",
+        logo: amazon,
+        link: "https://www.amazon.com/",
     },
     {
         name: "GT Business Analytics Center",
