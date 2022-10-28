@@ -129,4 +129,5 @@ dist
 
 *.cache
 .cache
-client/.firebase/*
+
+client/.firebase
