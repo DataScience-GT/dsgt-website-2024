@@ -2,7 +2,7 @@
 import styles from "./App.module.scss";
 
 //import react stuff
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //import pages
 import Home from "./Pages/Home";
