@@ -243,7 +243,7 @@ const Home = (params) => {
                 </div>
             </Section>
             <Section id="companies">
-                    <Major type="b">Companies we work with</Major>
+                    <Major type="b">Companies we've worked with</Major>
                 <div className={styles.Center}>
                 </div>
                 <div className={styles.SponsorsFlex}>
