@@ -24,6 +24,9 @@ const About = (params) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
+        //scroll to the top of the page
+        window.scrollTo(0, 0);
+        
         //show all page
         document.getElementsByTagName("body")[0].style.overflow = "auto";
 
