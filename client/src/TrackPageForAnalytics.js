@@ -1,6 +1,6 @@
 import { GA4React } from "ga-4-react";
 
-const ga4react = new GA4React("G-26LTB62X2N").initialize();
+const ga4react = new GA4React("G-JD5EVFJVXW").initialize();
 
 export interface AnalyticsData {
     path: string;
