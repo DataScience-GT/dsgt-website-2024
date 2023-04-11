@@ -7,19 +7,21 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //import pages
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import { useLocation } from "react-router";
+import trackPathForAnalytics from "./TrackPageForAnalytics";
+import { useEffect } from "react";
 
 function App() {
-    // //the width of the window
-    // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const {pathname, search} = useLocation();
+    
 
-    // useEffect(() => {
-    //     //handle the resizing of the window to render desktop vs mobile elements
-    //     function handleResize(e) {
-    //         setWindowWidth(window.innerWidth);
-    //     }
+    useEffect(() => {
+        const analytics = () => { 
+            trackPathForAnalytics({path: pathname, search: search, title: pathname.split("/")[1]})
+        };
 
-    //     window.addEventListener("resize", handleResize);
-    // }, []);
+        analytics();
+    }, [pathname, search]);
 
     return (
         <div className={styles.App}>
