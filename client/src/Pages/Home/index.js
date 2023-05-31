@@ -115,8 +115,8 @@ const Home = (params) => {
             <Section id="stats">
                 <Major type="b">Who We Are</Major>
                 <Mini>
-                    In the spring 2022 semester, we had 167 dedicated DSGT
-                    members. Here's how we look like:
+                    In the spring 2023 semester, we had 504 dedicated DSGT
+                    members. Here's how we look like in class and major demographics:
                 </Mini>
                 <br></br>
                 <div className={styles.ChartsFlex}>
