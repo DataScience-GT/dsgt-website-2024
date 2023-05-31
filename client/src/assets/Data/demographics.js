@@ -14,7 +14,7 @@ export const ClassData = {
     datasets: [
         {
             label: "Class Demographics",
-            data: [43.7, 21.6, 10.2, 4.2, 0.5, 19.8],
+            data: [42.7, 27.3, 9.68, 5.14, 1.38, 13.8],
             backgroundColor: [
                 "#FFBD59",
                 "#B8A23A",
@@ -35,13 +35,13 @@ export const MajorData = {
         "Other Engineering",
         "Anaytics",
         "Mathematics",
-        "Other Sciences",
+        "Business Administration",
         "Other",
     ],
     datasets: [
         {
             label: "Major Demographics",
-            data: [48.6, 18.8, 11.1, 9.0, 3.5, 3.5, 5.5],
+            data: [62.6, 9.86, 8.25, 8.65, 3.02, 2.41, 5.21],
             backgroundColor: [
                 "#88CDC5",
                 "#3D7990",
