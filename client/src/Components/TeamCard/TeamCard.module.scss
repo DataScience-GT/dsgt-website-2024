@@ -1,5 +1,5 @@
 //scale of how much images are zoomed in (with 1 being normal)
-$imgZoom: 2;
+$imgZoom: 1.4;
 
 .TeamCard {
     display: block;
@@ -27,6 +27,7 @@ $imgZoom: 2;
         top: 0;
         left: 50%;
         transform: translate(-50%, calc(-50% - 0.5em));
+
         > img {
             position: absolute;
             width: 100%;
@@ -43,11 +44,14 @@ $imgZoom: 2;
         width: 100% !important;
         height: auto !important;
     }
+    > .Top > img {
+        transform: translate(-50%, -40%);
+    }
     > .ZoomImage > img {
         transform: translate(-50%, -50%) scale($imgZoom);
     }
     > .ZoomImageTOP > img {
-        transform: translate(-50%, -5%) scale($imgZoom);
+        transform: translate(-50%, -30%) scale($imgZoom);
     }
     > .ZoomImageBOTTOM > img {
         transform: translate(-50%, -95%) scale($imgZoom);

@@ -11,6 +11,7 @@ const TeamCard = (params) => {
                 } ${params.tall ? styles.TallImage : ""}
                 ${params.zoom && params.top ? styles.ZoomImageTOP : ""}
                 ${params.zoom && params.bottom ? styles.ZoomImageBOTTOM : ""}
+                ${params.top ? styles.Top : ""}
                 ${
                     params.zoom && !(params.top && params.bottom)
                         ? styles.ZoomImage

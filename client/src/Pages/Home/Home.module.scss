@@ -66,8 +66,9 @@
 
 .SectionImage {
     width: 100%;
-    height: auto;
-    border-radius: 15px;
+    height: 24em;
+    object-fit: cover;
+    border-radius: 1em;
 }
 
 @media only screen and (max-width: 1000px) {
