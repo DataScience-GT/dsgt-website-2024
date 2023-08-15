@@ -14,7 +14,8 @@ const Card = (params) => {
                     <img src={params.img} alt="project logo" />
                 </div>
             ) : (
-                ""
+                <div className={styles.CardImg}>
+                </div>
             )}
             {params.heading ? (
                 <h1 className={styles.CardHeading}>{params.heading}</h1>

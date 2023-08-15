@@ -18,8 +18,8 @@ import Footer from "../../Components/Footer";
 import { ClassData, MajorData } from "../../assets/Data/demographics";
 
 //import images
-import storm from "../../assets/images/logos/storm.png";
-import mentra from "../../assets/images/logos/Mentra.png";
+import dlp from "../../assets/images/logos/dlp.png";
+import furnichanter from "../../assets/images/logos/furnichanter.png";
 import birdclef from "../../assets/images/logos/birdclef.png";
 import gtaa from "../../assets/images/logos/gtaa.png";
 
@@ -212,28 +212,34 @@ const Home = (params) => {
                     on:
                 </Mini>
                 <div className={styles.ProjectCards}>
-                    <Card img={storm} heading="Stormalytics">
-                        Stormalytics, an intelligent tornado activity prediction
-                        system, forecasts tornadoes based on records, rich
-                        doppler data, and statistic-based models.
-                    </Card>
-                    <Card img={mentra} heading="Mentra">
-                        Mentra is a startup that uses an NLP classifier to help
-                        neurodiverse individuals match with employers. It has
-                        won Microsoft AI for Accessibility Challenge and was
-                        named the Grand Prize Winner by the Biden
-                        Administration.
+                    <Card heading="Deep Learning Playground">
+                        Deep Learning Playground is a user-friendly web application 
+                        designed to provide an interactive and accessible introduction 
+                        to the world of Machine Learning and Deep Learning.
                     </Card>
                     <Card img={birdclef} heading="Kaggle birdCLEF">
-                        A data science competition hosted on Kaggle, birdCLEF
-                        focuses on developing machine learning algorithms to
-                        identify avian vocalizations in continuous soundscape
-                        data to aid conservation efforts.
+                        BirdCLEF is a cutting-edge data science competition held on the 
+                        Kaggle platform, with a primary objective of advancing the field 
+                        by crafting and refining machine learning algorithms that possess 
+                        the capability to detect and classify avian 
+                        vocalizations within uninterrupted soundscape data. 
                     </Card>
                     <Card img={gtaa} heading="GT Athletics">
-                        We are analyzing basketball data to help GT Athletics
-                        maximize their chances of winning by finding optimal
-                        non-conference opponents.
+                        The GT Basketball Scheduling Assistant project aims to enhance 
+                        Georgia Tech basketball's prospects of consistently making it to 
+                        the NCAA championship by strategically managing the selection of
+                        their non-conference opponents.
+                    </Card>
+                    <Card heading="Medical Data Analysis w/ REAR Lab">
+                        This project is an ambitious endeavor aimed at harnessing the power 
+                        of data analysis to gain crucial insights from the SCIMS Dataset, 
+                        a cornerstone of spinal cord injury research since 1973.
+                    </Card>
+                    <Card heading="Furnichanter">
+                        Furnichanter is an innovative project that seamlessly combines technology 
+                        with interior design. It aims to empower users with a unique experience 
+                        by enabling them to effortlessly search for furniture through images and 
+                        generate custom pieces from text descriptions using advanced AI models.
                     </Card>
                 </div>
             </Section>
@@ -261,7 +267,7 @@ const Home = (params) => {
                     <EventCard
                         img={slide6}
                         heading="Hacklytics"
-                        when="feb 10-12 2023"
+                        when="feb 9-11 2024"
                         button_text="Learn More"
                         button_to="#hacklytics"
                     >

@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     width: 22em;
-    height: 24em;
+    height: 26em;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 5px 5px 5px 2px rgba($color: #000000, $alpha: 0.3);
@@ -22,7 +22,8 @@
         width: 100%;
         overflow: hidden;
         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
-        > Img {
+
+        > img {
             display: block;
             position: relative;
             width: auto;
@@ -30,6 +31,7 @@
             margin: 0 auto;
         }
     }
+
     > .CardHeading {
         margin: 6px 40px;
         font-size: 1.4em;
