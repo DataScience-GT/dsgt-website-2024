@@ -27,7 +27,7 @@ import slide1 from "../../assets/images/slides/slide1.jpg";
 import slide6 from "../../assets/images/slides/slide6.jpg";
 import slide7 from "../../assets/images/slides/slide7.jpg";
 import slide8 from "../../assets/images/slides/slide8.jpg";
-import slide0 from "../../assets/images/slides/slide0.jpg";
+import slide2 from "../../assets/images/slides/2023/slide2.JPG";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
@@ -106,7 +106,7 @@ const Home = (params) => {
                     <div className={styles.SectionHalf}>
                         <img
                             className={styles.SectionImage}
-                            src={slide0}
+                            src={slide2}
                             alt="The DSGT Exec Team"
                         />
                     </div>
@@ -185,17 +185,17 @@ const Home = (params) => {
                             opportunity to get hands-on experience with data
                             science, collaborating on projects that make a real
                             impact. As the world is becoming increasingly
-                            dependent on data, our theme for Hacklytics 2022 is
-                            "Connecting Communities". We look forward to seeing
+                            dependent on data, our theme for Hacklytics 2024 is
+                            "Around the World". We look forward to seeing
                             innovative projects inspired by using data as
-                            building blocks for a better world. Hacklytics 2022
-                            will be held in a hybrid format from February 18 -
-                            20th, 2022.
+                            building blocks for a better world. Hacklytics 2024
+                            will be held in an in person format between Feburary 9
+                            through 11, 2024.
                         </Mini>
                         <br />
                         <Mini>
                             <LearnMore to="https://hacklytics.io">
-                                Learn more about the upcoming Hacklytics 2023
+                                Learn more about the upcoming Hacklytics 2024
                             </LearnMore>
                         </Mini>
                     </div>

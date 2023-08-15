@@ -10,14 +10,15 @@ import Section from "../../Components/Section";
 import SmallHero from "../../Components/SmallHero";
 import TeamCard from "../../Components/TeamCard";
 
-import Devarsh from "../../assets/images/portraits/Devarsh.jpeg";
-import Jessi from "../../assets/images/portraits/Jessi.jpg";
-import John from "../../assets/images/portraits/John.jpg";
-import Krishi from "../../assets/images/portraits/Krishi.jpg";
-import Pranay from "../../assets/images/portraits/Pranay.jpg";
-import Pratham from "../../assets/images/portraits/Pratham.jpeg";
-import Reshma from "../../assets/images/portraits/Reshma.JPG";
-import Shreiyas from "../../assets/images/portraits/Shreiyas.png";
+import Adith from "../../assets/images/portraits/2023/Adith.jpg";
+import Archie from "../../assets/images/portraits/2023/Archie.jpg";
+import Aryan from "../../assets/images/portraits/2023/Aryan.jpg";
+import Bradley from "../../assets/images/portraits/2023/Bradley.jpg";
+import Emma from "../../assets/images/portraits/2023/Emma.jpeg";
+import Krishi from "../../assets/images/portraits/2023/Krishi.jpg";
+import Pennon from "../../assets/images/portraits/2023/Pennon.png";
+import Smera from "../../assets/images/portraits/2023/Smera.jpeg";
+import Vicente from "../../assets/images/portraits/2023/Vicente.png";
 
 const About = (params) => {
     //the width of the window
@@ -45,9 +46,9 @@ const About = (params) => {
             <Section id="teams" makefull="yes">
                 <div className={styles.TeamFlex}>
                     <TeamCard
-                        name="Shreiyas Saraf"
+                        name="Krishi Manek"
                         title="President"
-                        img={Shreiyas}
+                        img={Krishi}
                     >
                         I don’t have a specific division functioning under me
                         but the team I handle is the Executive Board. We are
@@ -58,9 +59,9 @@ const About = (params) => {
                         hackathon, Hacklytics, every year!
                     </TeamCard>
                     <TeamCard
-                        name="Pratham Mehta"
-                        title="Vice President & Director of Hacklytics"
-                        img={Pratham}
+                        name="Archie Goli"
+                        title="Co-Director of Hacklytics"
+                        img={Archie}
                     >
                         The Hacklytics team works to organize and conduct DSGT’s
                         flagship hackathon every Spring. This is a great way to
@@ -69,22 +70,20 @@ const About = (params) => {
                         people every year!
                     </TeamCard>
                     <TeamCard
-                        name="Krishi Manek"
-                        title="Director of Projects"
-                        img={Krishi}
+                        name="Emma Lawton"
+                        title="Co-Director of Hacklytics"
+                        img={Emma}
                     >
-                        The projects team consists of numerous focus groups
-                        working on industry and research oriented data-science
-                        projects. Getting involved with projects is a great way
-                        to gain hands-on experience with AI/ ML and meet new
-                        people while collaborating on a unique idea. Each
-                        semester we showcase all projects at the DSGT project
-                        expo!
+                        The Hacklytics team works to organize and conduct DSGT’s
+                        flagship hackathon every Spring. This is a great way to
+                        network with sponsors and develop strong communication
+                        and management skills. Plus, you get to meet many new
+                        people every year!
                     </TeamCard>
                     <TeamCard
-                        name="John Ramberger"
+                        name="Vicente Miranda"
                         title="Director of Technology"
-                        img={John}
+                        img={Vicente}
                         wide
                     >
                         The Technology Team specializes in frontend
@@ -93,10 +92,9 @@ const About = (params) => {
                         notibly being this site and the Membership Portal.
                     </TeamCard>
                     <TeamCard
-                        name="Jessi Chen"
+                        name="Adith Devakonda"
                         title="Director of Content"
-                        img={Jessi}
-                        wide
+                        img={Adith}
                     >
                         The content team manages the Bootcamp and Udemy courses,
                         where we teach our members core data science skills on a
@@ -110,9 +108,20 @@ const About = (params) => {
                         Deepnote.
                     </TeamCard>
                     <TeamCard
-                        name="Reshma Gudla"
+                        name="Pennon Shue"
                         title="Director of Marketing"
-                        img={Reshma}
+                        img={Pennon}
+                    >
+                        The marketing team focuses on social media initiatives,
+                        graphic design, newsletters, outreach, and more to
+                        increase engagement with DSGT both on and off campus.
+                        Our work consists of creating digital and in-person
+                        marketing strategies for both DSGT and Hacklytics!
+                    </TeamCard>
+                    <TeamCard
+                        name="Smera Bhatia"
+                        title="Director of Marketing"
+                        img={Smera}
                         wide
                     >
                         The marketing team focuses on social media initiatives,
@@ -122,10 +131,10 @@ const About = (params) => {
                         marketing strategies for both DSGT and Hacklytics!
                     </TeamCard>
                     <TeamCard
-                        name="Devarsh Pandya"
+                        name="Bradley Friedrich"
                         title="Director of Internal Affairs"
-                        img={Devarsh}
-                        wide
+                        img={Bradley}
+                        top
                     >
                         The Internal Affairs Team manages membership moderation
                         and develops ideas to improve the membership experience.
@@ -134,9 +143,11 @@ const About = (params) => {
                         and where it could do better.
                     </TeamCard>
                     <TeamCard
-                        name="Pranay Begwani"
+                        name="Aryan Verma"
                         title="Director of Finance"
-                        img={Pranay}
+                        img={Aryan}
+                        zoom
+                        top
                     >
                         The Finance Team's focus is to most efficiently utilize
                         DSGT's resources. We focus on fundraising, budgeting,
