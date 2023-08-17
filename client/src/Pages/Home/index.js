@@ -18,10 +18,11 @@ import Footer from "../../Components/Footer";
 import { ClassData, MajorData } from "../../assets/Data/demographics";
 
 //import images
-import dlp from "../../assets/images/logos/dlp.png";
-import furnichanter from "../../assets/images/logos/furnichanter.png";
+import dlp4 from "../../assets/images/logos/dlp4.png";
+import furnichanter from "../../assets/images/logos/furnichanter_logo.jpg";
 import birdclef from "../../assets/images/logos/birdclef.png";
 import gtaa from "../../assets/images/logos/gtaa.png";
+import shepcenter from "../../assets/images/logos/shepcenter.jpeg";
 
 import slide1 from "../../assets/images/slides/slide1.jpg";
 import slide6 from "../../assets/images/slides/slide6.jpg";
@@ -212,7 +213,7 @@ const Home = (params) => {
                     on:
                 </Mini>
                 <div className={styles.ProjectCards}>
-                    <Card heading="Deep Learning Playground">
+                    <Card img={dlp4} heading="Deep Learning Playground" linkUrl="https://datasciencegt-dlp.com/">
                         Deep Learning Playground is a user-friendly web application 
                         designed to provide an interactive and accessible introduction 
                         to the world of Machine Learning and Deep Learning.
@@ -230,12 +231,12 @@ const Home = (params) => {
                         the NCAA championship by strategically managing the selection of
                         their non-conference opponents.
                     </Card>
-                    <Card heading="Medical Data Analysis w/ REAR Lab">
+                    <Card img={shepcenter} heading="Medical Data Analysis w/ REAR Lab">
                         This project is an ambitious endeavor aimed at harnessing the power 
                         of data analysis to gain crucial insights from the SCIMS Dataset, 
                         a cornerstone of spinal cord injury research since 1973.
                     </Card>
-                    <Card heading="Furnichanter">
+                    <Card img={furnichanter} heading="Furnichanter" linkUrl="https://nucleusfox.github.io/furnichanter.html">
                         Furnichanter is an innovative project that seamlessly combines technology 
                         with interior design. It aims to empower users with a unique experience 
                         by enabling them to effortlessly search for furniture through images and 

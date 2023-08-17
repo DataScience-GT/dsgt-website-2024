@@ -18,7 +18,15 @@ const Card = (params) => {
                 </div>
             )}
             {params.heading ? (
-                <h1 className={styles.CardHeading}>{params.heading}</h1>
+                <div className={styles.Heading}>
+                    {params.linkUrl ? (
+                        <a href={params.linkUrl} target="_blank">
+                            <h1 className={styles.CardHeading}>{params.heading}</h1>
+                        </a>
+                    ) : (
+                        <h1 className={styles.CardHeading}>{params.heading}</h1>
+                    )}
+                </div>
             ) : (
                 ""
             )}

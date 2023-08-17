@@ -32,12 +32,30 @@
         }
     }
 
-    > .CardHeading {
-        margin: 6px 40px;
-        font-size: 1.4em;
-        color: rgb(32, 163, 158);
-        text-shadow: -1px 1px 1px rgba(37, 139, 136, 0.562);
+    > .Heading {
+        > a {
+            color: rgb(32, 163, 158);
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            > .CardHeading {
+                margin: 6px 40px;
+                font-size: 1.4em;
+                color: rgb(32, 163, 158);
+                text-shadow: -1px 1px 1px rgba(37, 139, 136, 0.562);
+            }
+        }
+        > .CardHeading {
+            margin: 6px 40px;
+            font-size: 1.4em;
+            color: rgb(32, 163, 158);
+            text-shadow: -1px 1px 1px rgba(37, 139, 136, 0.562);
+        }
     }
+
     > .CardText {
         margin: 0 40px;
         font-size: 1em;
