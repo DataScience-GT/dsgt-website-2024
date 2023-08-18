@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const LearnMore = (params) => {
     if (params.to && params.to.includes("http")) {
         return (
-            <a className={styles.LearnMore} href={params.to || "#"}>
+            <a className={styles.LearnMore} href={params.to || "#"} target="_blank"> 
                 {params.children}
                 <span className={styles.arrow}>→</span>
             </a>

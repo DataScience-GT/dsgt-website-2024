@@ -59,16 +59,13 @@ const About = (params) => {
                     </TeamCard>
                     <TeamCard
                         name="Shreiyas Saraf"
-                        title="President"
+                        title="Director of External Affairs"
                         img={Shreiyas}
                     >
-                        I don’t have a specific division functioning under me
-                        but the team I handle is the Executive Board. We are
-                        responsible for the functioning of Data Science at
-                        Georgia Tech - from administering the bootcamp, running
-                        projects, holding super cool events with companies like
-                        Amazon and Accenture as well as our annual data science
-                        hackathon, Hacklytics, every year!
+                        External Affairs is responsible for communicating with corporations 
+                        for representation at meetings and sponsorship for large club events. 
+                        All special events such as the Hackathon also fall within the duties 
+                        of External Affairs.
                     </TeamCard>
                     <TeamCard
                         name="Archie Goli"

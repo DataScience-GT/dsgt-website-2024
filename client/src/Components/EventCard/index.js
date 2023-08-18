@@ -32,6 +32,7 @@ const EventCard = (params) => {
                             className={styles.CardButton}
                             smooth
                             href={params.button_to}
+                            target="_blank"
                         >
                             {params.button_text}
                         </a>

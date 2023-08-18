@@ -47,7 +47,7 @@ const Footer = (params) => {
                     <h2 className={styles.minor}>Company</h2>
                     <Link
                         className={`${styles.mini} ${styles.link}`}
-                        to="#about"
+                        to="about"
                     >
                         About Us
                     </Link>
@@ -69,24 +69,28 @@ const Footer = (params) => {
                     <a
                         className={`${styles.mini} ${styles.link}`}
                         href="https://www.instagram.com/datasciencegt/"
+                        target="_blank"
                     >
                         Instagram
                     </a>
                     <a
                         className={`${styles.mini} ${styles.link}`}
                         href="https://www.facebook.com/datasciencegt/"
+                        target="_blank"
                     >
                         Facebook
                     </a>
                     <a
                         className={`${styles.mini} ${styles.link}`}
                         href="https://www.linkedin.com/company/dsgt/"
+                        target="_blank"
                     >
                         LinkedIn
                     </a>
                     <a
                         className={`${styles.mini} ${styles.link}`}
                         href="https://github.com/DataScience-GT"
+                        target="_blank"
                     >
                         Github
                     </a>

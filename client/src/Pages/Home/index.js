@@ -19,7 +19,7 @@ import { ClassData, MajorData } from "../../assets/Data/demographics";
 
 //import images
 import dlp4 from "../../assets/images/logos/dlp4.png";
-import furnichanter from "../../assets/images/logos/furnichanter_logo.jpg";
+import furnichanter from "../../assets/images/logos/furnichanter.png";
 import birdclef from "../../assets/images/logos/birdclef.png";
 import gtaa from "../../assets/images/logos/gtaa.png";
 import shepcenter from "../../assets/images/logos/shepcenter.jpeg";
@@ -236,7 +236,7 @@ const Home = (params) => {
                         of data analysis to gain crucial insights from the SCIMS Dataset, 
                         a cornerstone of spinal cord injury research since 1973.
                     </Card>
-                    <Card img={furnichanter} heading="Furnichanter" linkUrl="https://nucleusfox.github.io/furnichanter.html">
+                    <Card heading="Furnichanter" linkUrl="https://nucleusfox.github.io/furnichanter.html">
                         Furnichanter is an innovative project that seamlessly combines technology 
                         with interior design. It aims to empower users with a unique experience 
                         by enabling them to effortlessly search for furniture through images and 
