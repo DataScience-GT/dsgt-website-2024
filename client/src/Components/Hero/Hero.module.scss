@@ -95,6 +95,9 @@ $hero-foreground-color: rgb(229, 230, 219);
         transform: translateX(2px), translateY(2px);
         cursor: pointer;
 
+        width: fit-content;
+        height: fit-content;
+
         > .arrow {
             margin-left: 4px;
             transition: 0.3s all ease;
@@ -175,7 +178,7 @@ $hero-foreground-color: rgb(229, 230, 219);
             flex-direction: column;
             position: relative;
             //centered height
-            height: calc(100% - 6em);
+            height: calc(100% - 4em);
             width: 50%;
             float: left;
             overflow: hidden;
