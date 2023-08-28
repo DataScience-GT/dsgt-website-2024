@@ -18,10 +18,12 @@ import Footer from "../../Components/Footer";
 import { ClassData, MajorData } from "../../assets/Data/demographics";
 
 //import images
-import dlp from "../../assets/images/logos/dlp.png";
+import dlp4 from "../../assets/images/logos/dlp4.png";
 import furnichanter from "../../assets/images/logos/furnichanter.png";
 import birdclef from "../../assets/images/logos/birdclef.png";
 import gtaa from "../../assets/images/logos/gtaa.png";
+import shepcenter from "../../assets/images/logos/shepcenter.jpeg";
+import blueconduit from "../../assets/images/logos/blueconduit.png";
 
 import slide1 from "../../assets/images/slides/slide1.jpg";
 import slide6 from "../../assets/images/slides/slide6.jpg";
@@ -212,10 +214,12 @@ const Home = (params) => {
                     on:
                 </Mini>
                 <div className={styles.ProjectCards}>
-                    <Card heading="Deep Learning Playground">
+                    <Card img={dlp4} heading="Deep Learning Playground" linkUrl="https://datasciencegt-dlp.com/">
                         Deep Learning Playground is a user-friendly web application 
                         designed to provide an interactive and accessible introduction 
-                        to the world of Machine Learning and Deep Learning.
+                        to the world of Machine Learning and Deep Learning.{" "}
+                        <br/><br/>
+                        <a target="_blank" href="https://datasciencegt-dlp.com/">Learn More.</a>
                     </Card>
                     <Card img={birdclef} heading="Kaggle birdCLEF">
                         BirdCLEF is a cutting-edge data science competition held on the 
@@ -230,16 +234,26 @@ const Home = (params) => {
                         the NCAA championship by strategically managing the selection of
                         their non-conference opponents.
                     </Card>
-                    <Card heading="Medical Data Analysis w/ REAR Lab">
+                    <Card img={shepcenter} heading="Medical Data Analysis w/ REAR Lab">
                         This project is an ambitious endeavor aimed at harnessing the power 
                         of data analysis to gain crucial insights from the SCIMS Dataset, 
                         a cornerstone of spinal cord injury research since 1973.
                     </Card>
-                    <Card heading="Furnichanter">
+                    <Card img={furnichanter} heading="Furnichanter" linkUrl="https://nucleusfox.github.io/furnichanter.html">
                         Furnichanter is an innovative project that seamlessly combines technology 
                         with interior design. It aims to empower users with a unique experience 
                         by enabling them to effortlessly search for furniture through images and 
-                        generate custom pieces from text descriptions using advanced AI models.
+                        generate custom pieces from text descriptions using advanced AI models. {" "}
+                        <br/><br/>
+                        <a target="_blank" href="https://nucleusfox.github.io/furnichanter.html">Learn More.</a>
+                    </Card>
+                    <Card img={blueconduit} heading="Blue Conduit" linkUrl="https://blueconduit.com/">
+                        The Blue Conduit project is a collaboration with the Harvard data science
+                        program. It employs machine learning to predict lead pipe service lines, with 
+                        several models being developed during the Flint Water Crisis. It utilizes a 
+                        diffusion model to enhance predictions. {" "}
+                        <br/><br/>
+                        <a target="_blank" href="https://blueconduit.com/">Learn More.</a>
                     </Card>
                 </div>
             </Section>

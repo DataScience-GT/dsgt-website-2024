@@ -10,6 +10,7 @@ import Section from "../../Components/Section";
 import SmallHero from "../../Components/SmallHero";
 import TeamCard from "../../Components/TeamCard";
 
+import Shreiyas from "../../assets/images/portraits/2022/Shreiyas.png";
 import Adith from "../../assets/images/portraits/2023/Adith.jpg";
 import Archie from "../../assets/images/portraits/2023/Archie.jpg";
 import Aryan from "../../assets/images/portraits/2023/Aryan.jpg";
@@ -50,13 +51,21 @@ const About = (params) => {
                         title="President"
                         img={Krishi}
                     >
-                        I don’t have a specific division functioning under me
-                        but the team I handle is the Executive Board. We are
-                        responsible for the functioning of Data Science at
-                        Georgia Tech - from administering the bootcamp, running
+                        The executive board is in charge of the functioning of 
+                        Data Science at Georgia Tech - from administering the bootcamp, running
                         projects, holding super cool events with companies like
                         Amazon and Accenture as well as our annual data science
                         hackathon, Hacklytics, every year!
+                    </TeamCard>
+                    <TeamCard
+                        name="Shreiyas Saraf"
+                        title="Director of External Affairs"
+                        img={Shreiyas}
+                    >
+                        External Affairs is responsible for communicating with corporations 
+                        for representation at meetings and sponsorship for large club events. 
+                        All special events such as the Hackathon also fall within the duties 
+                        of External Affairs.
                     </TeamCard>
                     <TeamCard
                         name="Archie Goli"

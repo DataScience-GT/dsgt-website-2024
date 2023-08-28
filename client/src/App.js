@@ -25,8 +25,9 @@ function App() {
                         : "",
             });
         };
-
         analytics();
+
+        window.scrollTo(0, 0);
     }, [pathname, search]);
 
     return (

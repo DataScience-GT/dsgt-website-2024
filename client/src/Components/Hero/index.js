@@ -41,6 +41,15 @@ const Hero = (params) => {
                     {/* <h1 className="hero-minor">Georgia Tech's largest data science organization</h1> */}
                     <div className={styles.HeroSep}></div>
                     {/* <button type="button" className="apply-button">Apply</button> */}
+                    <div className={styles.AcceptingMembers}>
+                        <p className={styles.New}>
+                            Now accepting members Fall 2023. Register 
+                            {" "}
+                            <a href="https://member.datasciencegt.org/register" target="_blank">
+                                here.
+                            </a>
+                        </p>
+                    </div>
                     <HashLink className={styles.LearnMore} smooth to="#about">
                         Learn More<span className={styles.arrow}>→</span>
                     </HashLink>

@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     width: 22em;
-    height: 26em;
+    height: 32em;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 5px 5px 5px 2px rgba($color: #000000, $alpha: 0.3);
@@ -26,20 +26,41 @@
         > img {
             display: block;
             position: relative;
-            width: auto;
+            width: 80%;
+            object-fit: contain;
             height: 100%;
             margin: 0 auto;
         }
     }
 
-    > .CardHeading {
-        margin: 6px 40px;
-        font-size: 1.4em;
-        color: rgb(32, 163, 158);
-        text-shadow: -1px 1px 1px rgba(37, 139, 136, 0.562);
+    > .Heading {
+        > a {
+            color: rgb(32, 163, 158);
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            > .CardHeading {
+                padding: 0 1em;
+                padding-top: 1em;
+                font-size: 1.4em;
+                color: rgb(32, 163, 158);
+                text-shadow: -1px 1px 1px rgba(37, 139, 136, 0.562);
+            }
+        }
+        > .CardHeading {
+            padding: 0 1em;
+            padding-top: 1em;
+            font-size: 1.4em;
+            color: rgb(32, 163, 158);
+            text-shadow: -1px 1px 1px rgba(37, 139, 136, 0.562);
+        }
     }
+
     > .CardText {
-        margin: 0 40px;
+        padding: 1em 1.4em;
         font-size: 1em;
         font-weight: normal;
     }
