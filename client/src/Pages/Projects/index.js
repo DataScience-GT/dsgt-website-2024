@@ -148,7 +148,7 @@ const Projects = (params) => {
             skillOther,
             (data) => {
                 if (data.ok) {
-                    window.location.href = "/*";
+                    window.location.href = "/";
                 }
             }
         ).catch((err) => {
