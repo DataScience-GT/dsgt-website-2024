@@ -1,10 +1,10 @@
-.section {
+.Section {
     display: block;
     position: relative;
-    width: calc(100% - 100px);
+    width: calc(100%);
     height: fit-content;
-    margin: 0px 50px;
-    padding: 100px 0;
+    padding: 2.4em;
+
     > .SectionWrapper {
         display: block;
         position: relative;
@@ -14,8 +14,8 @@
         margin: 0 auto;
     }
 }
+
 .FullSection {
-    padding: 50px 0;
     > .SectionWrapper {
         max-width: 1600px;
     }

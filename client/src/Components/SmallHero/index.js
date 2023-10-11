@@ -1,8 +1,6 @@
 //imports
 import styles from "./SmallHero.module.scss";
 
-import smallblob from "../../assets/images/blobs/small-header--export.svg";
-
 /**
  * the landind hero in small scale for sub pages, has title (params.title) and a description (params.desc || params.description)
  * @param {*} params
@@ -11,7 +9,6 @@ import smallblob from "../../assets/images/blobs/small-header--export.svg";
 const SmallHero = (params) => {
     return (
         <div {...params} className={styles.SmallHero}>
-            <img className={styles.SmallHeroBlob} src={smallblob} alt="blob" />
             <div className={styles.SmallHeroWrapper}>
                 <div className={styles.SmallHeroLeft}>
                     <h1 className={styles.major}>{params.title}</h1>

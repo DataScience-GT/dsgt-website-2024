@@ -4,6 +4,7 @@ import styles from "./Navbar.module.scss";
 import logo from "../../assets/images/dsgt/apple-touch-icon.png";
 import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
+import smallblob from "../../assets/images/blobs/small-header--export.svg";
 
 /**
  * The navbar at the top of the page (desktop version and mobile version)
@@ -39,10 +40,13 @@ const Navbar = (params) => {
     };
 
     if (windowWidth >= WIDTH_THRESHOLD) {
-        //desktop navbar
-        //just a navbar with buttons
         return (
             <div {...params} className={styles.DesktopNavbar}>
+                {params.page != 'home' ? (
+                    <img className={styles.SmallHeroBlob} src={smallblob} alt="blob" />
+                ) : (
+                    <div></div>
+                )} 
                 <div className={styles.NavWrapper}>
                     <div className={styles.NavWrapperFlexLeft}>
                         <img
@@ -108,8 +112,7 @@ const Navbar = (params) => {
             </div>
         );
     } else {
-        //mobile navbar
-        //have a hamburger to open the mobile nav menu and close it
+        // mobile navbar
         return (
             <div {...params} className={styles.MobileNavbar}>
                 <div className={styles.NavWrapper}>

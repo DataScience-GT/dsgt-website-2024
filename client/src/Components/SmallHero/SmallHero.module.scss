@@ -4,8 +4,7 @@ $hero-foreground-color: rgb(229, 230, 219);
     display: block;
     position: relative;
     width: 100%;
-    //height: 100vh;
-    height: calc(45vh - 6em);
+    height: fit-content;
     z-index: 1;
 
     animation: fade-in 1s;
@@ -18,6 +17,7 @@ $hero-foreground-color: rgb(229, 230, 219);
         border-bottom: 2px solid $hero-foreground-color;
         margin: 30px 0;
         transform: translateX(4px);
+
         &:before {
             content: "";
             display: block;
@@ -53,30 +53,27 @@ $hero-foreground-color: rgb(229, 230, 219);
         top: 0;
         right: 0;
     }
+
     > .SmallHeroWrapper {
-        display: block;
+        display: flex;
         position: relative;
         height: 100%;
         width: 100%;
         max-width: 1600px;
         margin: 0 auto;
-        padding-top: 8em;
+        padding: 2.4em;
+        padding-bottom: 0;
 
         > .SmallHeroLeft {
             display: flex;
             position: relative;
-            width: 50%;
+            width: 80%;
             float: left;
-            padding: 0 20px;
-            margin: 1em 0;
 
             flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-
-            //border: 1px solid red;
 
             > .major {
+                height: fit-content;
                 color: $hero-foreground-color;
                 font-weight: 700;
                 text-align: left;
@@ -84,12 +81,12 @@ $hero-foreground-color: rgb(229, 230, 219);
                 font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
                 text-shadow: 2px 2px $hero-foreground-color;
                 -webkit-text-stroke-width: 1.5px;
-                //-webkit-text-stroke-color: #ecae58;
                 -webkit-text-stroke-color: $hero-foreground-color;
                 color: transparent;
                 letter-spacing: 0px;
                 font-size: 4em;
             }
+
             > .minor {
                 color: $hero-foreground-color;
                 font-weight: normal;
