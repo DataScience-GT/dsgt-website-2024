@@ -16,6 +16,7 @@ const Projects = (params) => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     useEffect(() => {
         //show all page
@@ -126,9 +127,11 @@ const Projects = (params) => {
             && startDate && skills
         )) {
             setError("Missing one or more required fields.");
+            setSuccess("");
             return;
         } else if (fields.length < 1 || skills.length < 1) {
             setError("You must select at least one related field and one desired skill.");
+            setSuccess("");
             return;
         }
 
@@ -148,11 +151,13 @@ const Projects = (params) => {
             skillOther,
             (data) => {
                 if (data.ok) {
-                    window.location.href = "/";
+                    setSuccess("Successfully submitted!")
+                    setError("");
                 }
             }
         ).catch((err) => {
-            setError(err.message)
+            setError(err.message);
+            setSuccess("");
         });
     };
 
@@ -431,6 +436,9 @@ const Projects = (params) => {
                         />
                         <p className={styles.Error}>
                             {error}
+                        </p>
+                        <p className={styles.Success}>
+                            {success}
                         </p>
                     </div>
                 </Section>
