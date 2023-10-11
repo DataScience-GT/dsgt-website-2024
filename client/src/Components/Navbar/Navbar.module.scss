@@ -1,17 +1,28 @@
 .DesktopNavbar {
     display: block;
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 6em;
 
     z-index: 2;
 
-    //border: 1px solid red;
-
     a {
         text-decoration: none;
         color: inherit;
     }
+
+    > .SmallHeroBlob {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 8.5em;
+        top: 0;
+        right: 0;
+    }
+
     .NavWrapper {
         display: block;
         position: relative;
@@ -19,8 +30,6 @@
         width: 100%;
         max-width: 1600px;
         margin: 0 auto;
-
-        //border: 1px solid blue;
 
         > .NavWrapperFlexLeft {
             display: flex;
@@ -75,7 +84,6 @@
             justify-content: flex-end;
             align-items: center;
 
-            //border: 1px solid blue;
             > .NavMenuitem {
                 display: block;
                 position: relative;

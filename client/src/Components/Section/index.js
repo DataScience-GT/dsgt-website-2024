@@ -9,7 +9,7 @@ import styles from "./Section.module.scss";
 const Section = (params) => {
     return (
         <div
-            className={`${styles.section} ${
+            className={`${styles.Section} ${
                 params.makefull ? styles.FullSection : ""
             }`}
             {...params}

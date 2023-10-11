@@ -4,6 +4,8 @@ import styles from "./Hero.module.scss";
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import Mini from "../Text/Mini";
+import LearnMore from "../LearnMore";
 
 import hero3 from "../../assets/images/blobs/hero3--export.svg";
 import hero2mobile from "../../assets/images/blobs/hero2-mobile--export.svg";
@@ -42,17 +44,20 @@ const Hero = (params) => {
                     <div className={styles.HeroSep}></div>
                     {/* <button type="button" className="apply-button">Apply</button> */}
                     <div className={styles.AcceptingMembers}>
-                        <p className={styles.New}>
+                        {/* <p className={styles.New}>
                             Now accepting members Fall 2023. Register 
                             {" "}
                             <a href="https://member.datasciencegt.org/register" target="_blank">
                                 here.
                             </a>
-                        </p>
+                        </p> */}
                     </div>
                     <HashLink className={styles.LearnMore} smooth to="#about">
                         Learn More<span className={styles.arrow}>→</span>
                     </HashLink>
+                    {/* <Mini>
+                        <LearnMore to="/projects">Create a project application.</LearnMore>
+                    </Mini> */}
                 </div>
                 <div className={styles.HeroRight}>
                     <img
