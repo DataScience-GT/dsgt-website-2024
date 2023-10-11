@@ -14,7 +14,7 @@ export const submitProjectInfo = async (
     skillOther,
     callback
 ) => {
-    await fetch("api/projects/create", {
+    await fetch("/api/projects/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

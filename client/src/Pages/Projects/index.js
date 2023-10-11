@@ -116,6 +116,10 @@ const Projects = (params) => {
     }
 
     const handle_onSubmit = async (e) => {
+
+        console.log(name, location, hosts, contactEmail, fields, fieldOther,
+            description, numStudents, term, compensation, startDate, skills, skillOther);
+
         if (!(
             name && location && hosts && contactEmail && fields && description 
             && numStudents && term && compensation
