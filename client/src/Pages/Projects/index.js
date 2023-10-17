@@ -74,25 +74,29 @@ const Projects = (params) => {
         }
     }
 
+    // Handle changes in the 'fieldOther' input field
     const handleChange_fieldOther = (e) => {
         e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
         setFieldOther(e.target.value);
     }
 
+    // Handle changes in the 'description' input field
     const handleChange_description = (e) => {
         e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
         setDescription(e.target.value);
     };
 
+    // Handle changes in the 'numStudents' input field
     const handleChange_numStudents = (e) => {
         e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
         setNumStudents(e.target.value);
     };
 
+    // Handle changes in the 'compensation' input field
     const handleChange_compensation = (e) => {
         setCompensation(e.target.value);
     };
-
+    
     const handleChange_term = (e) => {
         setTerm(e.target.id);
     }
