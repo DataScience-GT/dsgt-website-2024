@@ -19,16 +19,28 @@
     padding: 1em 0;
     gap: 1em;
 
-    > p {
+    > .SubmitImage {
+        display: flex;
         position: relative;
-        z-index: 1;
-        font-size: 1.2em;
-        line-height: 1em;
-        transition: 0.3s all ease;
-        text-transform: capitalize;
-        font-weight: 500;
-    
-        color: #fff;
+        height: fit-content;
+        width: fit-content;
+        flex-direction: column;
+
+        > input {
+            font-size: 1em;
+            padding: 1em 0;
+            margin-bottom: 1em;
+            color: #fff;
+        }
+
+        > input::file-selector-button {
+            border-radius: 0.8em;
+            padding: 0.5em;
+            &:hover {
+                background-color: #dbdbdb;
+                cursor: pointer;
+            }
+        }
     }
 
     > label {
@@ -64,18 +76,6 @@
     
         margin-bottom: 2em;
 
-        > p {
-            position: relative;
-            font-size: 1.2em;
-            line-height: 1em;
-            transition: 0.3s all ease;
-            text-transform: capitalize;
-            z-index: 1;
-            font-weight: 500;
-        
-            color: #fff;
-        }
-
         > input {
             height: 40px;
             padding: 0 20px;
@@ -85,4 +85,20 @@
 
 .OtherInactive {
     opacity: 0.5;
+}
+
+p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2em;
+    line-height: 1em;
+    transition: 0.3s all ease;
+    text-transform: capitalize;
+    font-weight: 500;
+
+    color: #fff;
+}
+
+.RadioP {
+    margin-top: 0.5em;
 }

@@ -3,6 +3,7 @@ import styles from "./Projects.module.scss";
 import { useState, useEffect } from "react";
 
 import { submitProjectInfo } from "../../api/ProjectApps";
+import imageCompressor from 'image-compressor';
 
 import Background from "../../Components/Background";
 import Footer from "../../Components/Footer";
@@ -11,6 +12,7 @@ import SmallHero from "../../Components/SmallHero";
 import Section from "../../Components/Section";
 import InputField from "../../Components/InputField";
 import InlineRadioInput from "../../Components/InlineRadioInput/InlineRadioInput";
+import ProjectCard from "../../Components/ProjectCard/ProjectCard";
 
 const Projects = (params) => {
 
@@ -18,18 +20,7 @@ const Projects = (params) => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-    useEffect(() => {
-        //show all page
-        document.getElementsByTagName("body")[0].style.overflow = "auto";
-
-        //handle the resizing of the window to render desktop vs mobile elements
-        function handleResize(e) {
-            setWindowWidth(window.innerWidth);
-        }
-
-        window.addEventListener("resize", handleResize);
-    }, []);
-
+    const [FR, setFR] = useState(new FileReader());
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [fields, setFields] = useState([]);
@@ -43,28 +34,24 @@ const Projects = (params) => {
     const [skillOther, setSkillOther] = useState("");
     const [hosts, setHosts] = useState("");
     const [contactEmail, setContactEmail] = useState("");
+    const [showOther1, setShowOther1] = useState(false);
+    const [showOther2, setShowOther2] = useState(false);
+    const [imgData, setImgData] = useState("");
 
-    const handleChange_name = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setName(e.target.value);
+    useEffect(() => {
+        FR.addEventListener("load", loadImageData);
+        return () => {
+            FR.removeEventListener("load", loadImageData);
+        };
+    }, []);
+
+    const loadImageData = (e) => {
+        if (e.target && e.target.result) {
+            setImgData(e.target.result.toString());
+        }
     };
 
-    const handleChange_location = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setLocation(e.target.value);
-    };
-
-    const handleChange_hosts = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setHosts(e.target.value);
-    };
-
-    const handleChange_contactEmail = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setContactEmail(e.target.value);
-    };
-
-    const handleChange_field = (e) => {
+    const handleFields = (e) => {
         if (e.currentTarget.checked && e.currentTarget.id) {
             if (!fields.includes(e.currentTarget.id)) {
                 setFields([...fields, e.currentTarget.id]);
@@ -74,35 +61,8 @@ const Projects = (params) => {
         }
     }
 
-    const handleChange_fieldOther = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setFieldOther(e.target.value);
-    }
-
-    const handleChange_description = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setDescription(e.target.value);
-    };
-
-    const handleChange_numStudents = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setNumStudents(e.target.value);
-    };
-
-    const handleChange_compensation = (e) => {
-        setCompensation(e.target.value);
-    };
-
-    const handleChange_term = (e) => {
-        setTerm(e.target.id);
-    }
-
-    const handleChange_startDate = (e) => {
-        setStartDate(e.target.value);
-    };
-
-    const handleChange_skills = (e) => {
-        if (e.currentTarget.checked) {
+    const handleSkills = (e) => {
+        if (e.currentTarget.checked && e.currentTarget.id) {
             if (!skills.includes(e.currentTarget.id)) {
                 setSkills([...skills, e.currentTarget.id]);
             }
@@ -111,20 +71,14 @@ const Projects = (params) => {
         }
     }
 
-    const handleChange_skillOther = (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
-        setSkillOther(e.target.value);
-    }
-
-    const handle_onSubmit = async (e) => {
-
-        console.log(name, location, hosts, contactEmail, fields, fieldOther,
-            description, numStudents, term, compensation, startDate, skills, skillOther);
-
+    /**
+     * Submits project infor based on form params.
+     */
+    const handleSubmit = async () => {
         if (!(
             name && location && hosts && contactEmail && fields && description 
             && numStudents && term && compensation
-            && startDate && skills
+            && startDate && skills && imgData
         )) {
             setError("Missing one or more required fields.");
             setSuccess("");
@@ -135,6 +89,10 @@ const Projects = (params) => {
             return;
         }
 
+        console.log(name, location, hosts, contactEmail, fields.join(", "), fieldOther,
+            imgData, description, numStudents, term, compensation, startDate, skills.join(", "),
+            skillOther);
+
         await submitProjectInfo(
             name,
             location,
@@ -142,6 +100,7 @@ const Projects = (params) => {
             contactEmail,
             fields.join(", "),
             fieldOther,
+            imgData,
             description,
             numStudents,
             term,
@@ -151,7 +110,9 @@ const Projects = (params) => {
             skillOther,
             (data) => {
                 if (data.ok) {
-                    setSuccess("Successfully submitted!")
+                    setSuccess("Successfully submitted! " + name, location, hosts, contactEmail, fields, fieldOther,
+                    imgData, description, numStudents, term, compensation, startDate, skills,
+                    skillOther);
                     setError("");
                 }
             }
@@ -168,271 +129,327 @@ const Projects = (params) => {
             <div className={styles.ProjectsPage}>
                 <SmallHero
                     title="Submit a Project Application"
-                    desc="Get students matched with your project."
+                    desc="Get students matched with your project. DSGT will filter these projects and,
+                    if you have contacted us, will post your proejct exclusively to our club members
+                    on our portal alongside relevant
+                    project application questions."
                 />
                 <Section id="project-application" makefull="yes">
                     <div className={styles.ProjectFormFlex}>
                         <InputField
                             type="text"
                             placeholder="Project Name"
+                            extraPlaceholder="e.g. ML Techniques"
                             width="100%"
-                            onChange={handleChange_name}
+                            onChange={(e) => {
+                                setName(e.target.value);
+                            }}
                         />
                         <InputField
                             type="text"
                             placeholder="Project Location (building/room if applicable)"
+                            extraPlaceholder="e.g. Klaus 1440"
                             width="100%"
-                            onChange={handleChange_location}
+                            onChange={(e) => {
+                                setLocation(e.target.value);
+                            }}
                         />
                         <InputField
                             type="text"
                             placeholder="Project Hosts or Authors"
+                            extraPlaceholder="e.g. Vicente Miranda"
                             width="100%"
-                            onChange={handleChange_hosts}
+                            onChange={(e) => {
+                                setHosts(e.target.value);
+                            }}
                         />
                         <InputField
                             type="text"
                             placeholder="Project Contact Email"
+                            extraPlaceholder="e.g. vmiranda6@gatech.edu"
                             width="100%"
-                            onChange={handleChange_contactEmail}
+                            onChange={(e) => {
+                                setContactEmail(e.target.value);
+                            }}
                         />
                         <div className={styles.Radio}>
-                            <p>Related Fields of Research</p>
+                            <p className={styles.RadioP}>Related Fields of Research</p>
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="AI/Machine Learning"
                                 value="1"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("AI/Machine-Learning-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("AI/Machine Learning")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Financial"
                                 value="2"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Financial-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Financial")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Biomedical"
                                 value="3"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Biomedical-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Biomedical")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Chemical"
                                 value="4"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Chemical-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Chemical")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Pharmaceutical"
                                 value="5"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Pharmaceutical-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Pharmaceutical")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Electrical"
                                 value="6"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Electrical-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Electrical")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Materials"
                                 value="7"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Materials-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Materials")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Physics/Quantum"
                                 value="8"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Physics/Quantum-Option")}
+                                onChange={handleFields}
+                                checked={fields.includes("Physics/Quantum")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Other"
                                 value="9"
-                                name="Option"
-                                onChange={handleChange_field}
-                                checked={fields.includes("Other-Option")}
+                                onChange={(e) => {
+                                    setShowOther1(!showOther1);
+                                }}
+                                checked={showOther1}
                             />
                             <input
-                                className={fields.includes("Other-Option") ? "" : styles.OtherInactive}
+                                className={showOther1 ? "" : styles.OtherInactive}
                                 type={"text"}
                                 placeholder=" "
                                 autoComplete="other"
-                                onChange={handleChange_fieldOther}
+                                onChange={(e) => {
+                                    setFieldOther(e.target.value);
+                                }}
+                            />
+                        </div>
+                        <div className={styles.SubmitImage}>
+                            <p>Submit an image to go along your project</p>
+                            <input
+                                type="file"
+                                name="image"
+                                accept="image/*"
+                                onChange={(e) => {
+                                    if (e.currentTarget.files && e.currentTarget.files[0]) {
+                                        let file = e.currentTarget.files[0];
+                                        FR.readAsDataURL(file);
+                                    }
+                                }}
+                                required
                             />
                         </div>
                         <InputField
-                            type="text"
-                            placeholder="Start date (MM/DD/YYYY)"
+                            type="date"
+                            placeholder="Start date"
                             width="50%"
-                            onChange={handleChange_startDate}
+                            onChange={(e) => {
+                                setStartDate(e.target.value);
+                            }}
                         />
                         <InputField
                             type="textarea"
                             placeholder="Project Description"
+                            extraPlaceholder="Give a description of your project here..."
                             width="100%"
-                            onChange={handleChange_description}
+                            onChange={(e) => {
+                                setDescription(e.target.value);
+                            }}
                         />
                         <InputField
                             type="number"
                             placeholder="Desired number of students"
                             width="50%"
-                            onChange={handleChange_numStudents}
+                            extraPlaceholder="e.g. 4"
+                            onChange={(e) => {
+                                e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
+                                setNumStudents(e.target.value);
+                            }}
                         />
                         <InputField
                             type="number"
                             placeholder="Estimated compensation (hourly)"
+                            extraPlaceholder="e.g. 20"
                             width="50%"
-                            onChange={handleChange_compensation}
+                            onChange={(e) => {
+                                e.target.value = e.target.value.replace(/[^a-zA-Z0-9@.+_\- ]/g, "");
+                                setCompensation(e.target.value);
+                            }}
                         />
                         <div className={styles.Radio}>
-                            <p>Project Term Length</p>
+                            <p className={styles.RadioP}>Rough Project Term Length (Select 1)</p>
                             <InlineRadioInput
                                 color="#fff"
                                 label="1 month"
                                 value="1"
-                                name="Option"
-                                onChange={handleChange_term}
-                                checked={term === "1-month-Option"}
+                                onChange={(e) => {
+                                    setTerm(e.currentTarget.id);
+                                }}
+                                checked={term === "1 month"}
+                            />
+                            <InlineRadioInput
+                                color="#fff"
+                                label="2 months"
+                                value="2"
+                                onChange={(e) => {
+                                    setTerm(e.currentTarget.id);
+                                }}
+                                checked={term === "2 months"}
+                            />
+                            <InlineRadioInput
+                                color="#fff"
+                                label="3 months"
+                                value="3"
+                                onChange={(e) => {
+                                    setTerm(e.currentTarget.id);
+                                }}
+                                checked={term === "3 months"}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 label="6 months"
-                                value="2"
-                                name="Option"
-                                onChange={handleChange_term}
-                                checked={term === `6-months-Option`}
+                                value="4"
+                                onChange={(e) => {
+                                    setTerm(e.currentTarget.id);
+                                }}
+                                checked={term === "6 months"}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 label="1 year"
-                                value="3"
-                                name="Option"
-                                onChange={handleChange_term}
-                                checked={term === "1-year-Option"}
+                                value="5"
+                                onChange={(e) => {
+                                    setTerm(e.currentTarget.id);
+                                }}
+                                checked={term === "1 year"}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 label="More than 1 year"
-                                value="4"
-                                name="Option"
-                                onChange={handleChange_term}
-                                checked={term === "More-than-1-year-Option"}
+                                value="6"
+                                onChange={(e) => {
+                                    setTerm(e.currentTarget.id);
+                                }}
+                                checked={term === "More than 1 year"}
                             />
                         </div>
                         <div className={styles.Radio}>
-                            <p>Desired Skills</p>
+                            <p className={styles.RadioP}>Desired Skills</p>
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Databases"
                                 value="1"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Databases-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Databases")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Information Retrieval"
                                 value="2"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Information-Retrieval-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Information Retrieval")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Graphics"
                                 value="3"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Graphics-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Graphics")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
-                                label="Data-Analysis"
+                                label="Data Analysis"
                                 value="4"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Data-Analysis-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Data Analysis")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
-                                label="Web-Developing"
+                                label="Web Developing"
                                 value="5"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Web-Developing-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Web Developing")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Machine/Model Training"
                                 value="6"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Machine/Model-Training-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Machine/Model Training")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
                                 label="Theory/Mathematics"
                                 value="7"
-                                name="Option"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Theory/Mathematics-Option")}
+                                onChange={handleSkills}
+                                checked={skills.includes("Theory/Mathematics")}
                             />
                             <InlineRadioInput
                                 color="#fff"
                                 type="checkbox"
-                                label="Other"
+                                label="Other Option"
                                 value="8"
-                                name="Option2"
-                                onChange={handleChange_skills}
-                                checked={skills.includes("Other-Option2")}
+                                onChange={(e) => {
+                                    setShowOther2(!showOther2);
+                                }}
+                                checked={showOther2}
                             />
                             <input
-                                className={skills.includes("Other-Option2") ? "" : styles.OtherInactive}
+                                className={showOther2 ? "" : styles.OtherInactive}
                                 type={"text"}
                                 placeholder=" "
                                 autoComplete="other"
-                                onChange={handleChange_skillOther}
+                                onChange={(e) => {
+                                    setSkillOther(e.target.value);
+                                }}
                             />
                         </div>
                         <InputField
                             type={"submit"}
                             placeholder="Submit"
                             width="fit-content"
-                            onClick={handle_onSubmit}
+                            onClick={handleSubmit}
                         />
                         <p className={styles.Error}>
                             {error}

@@ -3,6 +3,7 @@ import styles from "./InputField.module.scss";
 const InputField = ({
     width,
     placeholder,
+    extraPlaceholder,
     name,
     helper,
     validIndication,
@@ -40,7 +41,7 @@ const InputField = ({
             >
                 <textarea
                     className={styles.TextBox}
-                    placeholder=" "
+                    placeholder={extraPlaceholder}
                     onChange={onChange}
                 ></textarea>
                 <label 
@@ -68,7 +69,7 @@ const InputField = ({
                         validIndication ? styles.validIndicator : ""
                     }`}
                     type={type}
-                    placeholder=" "
+                    placeholder={extraPlaceholder}
                     name={name || placeholder?.replaceAll(" ", "")}
                     autoComplete={name || placeholder?.replaceAll(" ", "")}
                     required={required}

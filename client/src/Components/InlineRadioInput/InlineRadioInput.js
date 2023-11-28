@@ -10,14 +10,11 @@ const InlineRadioInput = ({
     type,
     checked
 }) => {
-
-    const id = `${label?.replaceAll(" ", "-")}-${name?.replaceAll(" ", "-")}`;
-
     return (
         <div className={styles.RadioInput}>
             <input 
                 className={styles.Input}
-                id={id}
+                id={label}
                 type={type ?? "radio"}
                 name={name}
                 value={value}
@@ -27,7 +24,7 @@ const InlineRadioInput = ({
             />
             <label
                 className={styles.Label}
-                htmlFor={id}
+                htmlFor={label}
                 style={
                     checked
                         ? { backgroundColor: color, borderColor: color }

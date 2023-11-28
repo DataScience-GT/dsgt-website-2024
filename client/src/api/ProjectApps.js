@@ -1,3 +1,6 @@
+/**
+ * Production API endpoint: await fetch("https://member.datasciencegt.org/api/projects/create", {
+ */
 export const submitProjectInfo = async (
     name,
     location,
@@ -5,6 +8,7 @@ export const submitProjectInfo = async (
     contactEmail,
     fields,
     fieldOther,
+    imgData,
     description,
     numStudents,
     term,
@@ -14,7 +18,7 @@ export const submitProjectInfo = async (
     skillOther,
     callback
 ) => {
-    await fetch("https://member.datasciencegt.org/api/projects/create", {
+    await fetch("http://localhost:4211/api/projects/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -26,6 +30,7 @@ export const submitProjectInfo = async (
             projectContactEmail: contactEmail,
             relatedFields: fields,
             relatedFieldOther: fieldOther,
+            imgData: imgData,
             projectDescription: description,
             numStudentsDesired: numStudents,
             termLength: term,
