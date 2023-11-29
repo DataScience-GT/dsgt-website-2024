@@ -18,7 +18,7 @@ export const submitProjectInfo = async (
     skillOther,
     callback
 ) => {
-    await fetch("http://localhost:4211/api/projects/create", {
+    await fetch("https://member.datasciencegt.org/api/projects/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

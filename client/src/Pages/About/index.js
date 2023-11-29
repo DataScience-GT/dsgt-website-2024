@@ -37,7 +37,7 @@ const About = (params) => {
         window.addEventListener("resize", handleResize);
     }, []);
     return (
-        <div {...params} id="about-page">
+        <div {...params} className={styles.AboutPage}>
             <Background />
             <Navbar screen_width={windowWidth} />
             <SmallHero

@@ -130,7 +130,7 @@ const Projects = (params) => {
                 <SmallHero
                     title="Submit a Project Application"
                     desc="Get students matched with your project. DSGT will filter these projects and,
-                    if you have contacted us, will post your proejct exclusively to our club members
+                    if you have contacted us, will post your proeject exclusively to our club members
                     on our portal alongside relevant
                     project application questions."
                 />
@@ -259,7 +259,7 @@ const Projects = (params) => {
                             />
                         </div>
                         <div className={styles.SubmitImage}>
-                            <p>Submit an image to go along your project</p>
+                            <p className={styles.RadioP}>Submit an image to go along your project</p>
                             <input
                                 type="file"
                                 name="image"

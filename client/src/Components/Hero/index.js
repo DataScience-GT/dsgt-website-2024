@@ -55,6 +55,9 @@ const Hero = (params) => {
                     <HashLink className={styles.LearnMore} smooth to="#about">
                         Learn More<span className={styles.arrow}>→</span>
                     </HashLink>
+                    <HashLink className={styles.LearnMore} smooth to="/projects">
+                        Advertise Research<span className={styles.arrow}>→</span>
+                    </HashLink>
                     {/* <Mini>
                         <LearnMore to="/projects">Create a project application.</LearnMore>
                     </Mini> */}
