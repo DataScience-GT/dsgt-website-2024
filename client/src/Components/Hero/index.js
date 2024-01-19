@@ -40,6 +40,7 @@ const Hero = (params) => {
                         Data Science
                         <br />@ Georgia Tech
                     </h1>
+                    <p className={styles.HeroMinor2}>Now accepting members Spring 2024!</p>
                     {/* <h1 className="hero-minor">Georgia Tech's largest data science organization</h1> */}
                     <div className={styles.HeroSep}></div>
                     {/* <button type="button" className="apply-button">Apply</button> */}
