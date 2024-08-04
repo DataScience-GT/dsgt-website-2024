@@ -96,11 +96,12 @@ const About = (params) => {
                         title="Director of Logistics"
                         img={Nikita}
                     >
-                        The Hacklytics team works to organize and conduct DSGT’s
-                        flagship hackathon every Spring. This is a great way to
-                        network with sponsors and develop strong communication
-                        and management skills. Plus, you get to meet many new
-                        people every year!
+                        The Logistics team coordinates and manages the logistics
+                        for DSGT and our annual flagship hackathon held every
+                        Spring. Engaging in this event provides an excellent
+                        opportunity to collaborate with sponsors, enhance
+                        communication and management proficiencies, as well as
+                        connect with a diverse range of individuals each year.
                     </TeamCard>
                     <TeamCard
                         name="Lavan Vivekanandasarma"

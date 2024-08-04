@@ -1,10 +1,12 @@
-.Cards, .ProjectCards {
+.Cards,
+.ProjectCards {
     display: flex;
     position: relative;
     width: 100%;
     height: fit-content;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: stretch;
     flex-wrap: wrap;
     margin: 20px 0;
     gap: 20px;

@@ -29,7 +29,7 @@ import slide1 from "../../assets/images/slides/slide1.jpg";
 import slide6 from "../../assets/images/slides/slide6.jpg";
 import slide7 from "../../assets/images/slides/slide7.jpg";
 import slide8 from "../../assets/images/slides/slide8.jpg";
-import slide2 from "../../assets/images/slides/2023/slide2.JPG";
+import slide2 from "../../assets/images/slides/2023/slide2.jpg";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
@@ -118,7 +118,8 @@ const Home = (params) => {
                 <Major type="b">Who We Are</Major>
                 <Mini>
                     In the spring 2023 semester, we had 504 dedicated DSGT
-                    members. Here's how we look like in class and major demographics:
+                    members. Here's how we look like in class and major
+                    demographics:
                 </Mini>
                 <br></br>
                 <div className={styles.ChartsFlex}>
@@ -187,17 +188,16 @@ const Home = (params) => {
                             opportunity to get hands-on experience with data
                             science, collaborating on projects that make a real
                             impact. As the world is becoming increasingly
-                            dependent on data, our theme for Hacklytics 2024 is
-                            "Around the World". We look forward to seeing
+                            dependent on data, our theme for Hacklytics 2025 is
+                            "Jurassic Park". We look forward to seeing
                             innovative projects inspired by using data as
-                            building blocks for a better world. Hacklytics 2024
-                            will be held in an in person format between Feburary 9
-                            through 11, 2024.
+                            building blocks. Hacklytics 2025 will be held in an
+                            in person format between Feburary 7 through 9, 2025.
                         </Mini>
                         <br />
                         <Mini>
                             <LearnMore to="https://hacklytics.io">
-                                Learn more about the upcoming Hacklytics 2024
+                                Learn more about the upcoming Hacklytics 2025
                             </LearnMore>
                         </Mini>
                     </div>
@@ -214,46 +214,81 @@ const Home = (params) => {
                     on:
                 </Mini>
                 <div className={styles.ProjectCards}>
-                    <Card img={dlp4} heading="Deep Learning Playground" linkUrl="https://datasciencegt-dlp.com/">
-                        Deep Learning Playground is a user-friendly web application 
-                        designed to provide an interactive and accessible introduction 
-                        to the world of Machine Learning and Deep Learning.{" "}
-                        <br/><br/>
-                        <a target="_blank" href="https://datasciencegt-dlp.com/">Learn More.</a>
+                    <Card
+                        img={dlp4}
+                        heading="Deep Learning Playground"
+                        linkUrl="https://datasciencegt-dlp.com/"
+                    >
+                        Deep Learning Playground is a user-friendly web
+                        application designed to provide an interactive and
+                        accessible introduction to the world of Machine Learning
+                        and Deep Learning. <br />
+                        <br />
+                        <a
+                            target="_blank"
+                            href="https://datasciencegt-dlp.com/"
+                        >
+                            Learn More.
+                        </a>
                     </Card>
                     <Card img={birdclef} heading="Kaggle birdCLEF">
-                        BirdCLEF is a cutting-edge data science competition held on the 
-                        Kaggle platform, with a primary objective of advancing the field 
-                        by crafting and refining machine learning algorithms that possess 
-                        the capability to detect and classify avian 
-                        vocalizations within uninterrupted soundscape data. 
+                        BirdCLEF is a cutting-edge data science competition held
+                        on the Kaggle platform, with a primary objective of
+                        advancing the field by crafting and refining machine
+                        learning algorithms that possess the capability to
+                        detect and classify avian vocalizations within
+                        uninterrupted soundscape data.
                     </Card>
                     <Card img={gtaa} heading="GT Athletics">
-                        The GT Basketball Scheduling Assistant project aims to enhance 
-                        Georgia Tech basketball's prospects of consistently making it to 
-                        the NCAA championship by strategically managing the selection of
-                        their non-conference opponents.
+                        The GT Basketball Scheduling Assistant project aims to
+                        enhance Georgia Tech basketball's prospects of
+                        consistently making it to the NCAA championship by
+                        strategically managing the selection of their
+                        non-conference opponents.
                     </Card>
-                    <Card img={shepcenter} heading="Medical Data Analysis w/ REAR Lab">
-                        This project is an ambitious endeavor aimed at harnessing the power 
-                        of data analysis to gain crucial insights from the SCIMS Dataset, 
-                        a cornerstone of spinal cord injury research since 1973.
+                    <Card
+                        img={shepcenter}
+                        heading="Medical Data Analysis w/ REAR Lab"
+                    >
+                        This project is an ambitious endeavor aimed at
+                        harnessing the power of data analysis to gain crucial
+                        insights from the SCIMS Dataset, a cornerstone of spinal
+                        cord injury research since 1973.
                     </Card>
-                    <Card img={furnichanter} heading="Furnichanter" linkUrl="https://nucleusfox.github.io/furnichanter.html">
-                        Furnichanter is an innovative project that seamlessly combines technology 
-                        with interior design. It aims to empower users with a unique experience 
-                        by enabling them to effortlessly search for furniture through images and 
-                        generate custom pieces from text descriptions using advanced AI models. {" "}
-                        <br/><br/>
-                        <a target="_blank" href="https://nucleusfox.github.io/furnichanter.html">Learn More.</a>
+                    <Card
+                        img={furnichanter}
+                        heading="Furnichanter"
+                        linkUrl="https://nucleusfox.github.io/furnichanter.html"
+                    >
+                        Furnichanter is an innovative project that seamlessly
+                        combines technology with interior design. It aims to
+                        empower users with a unique experience by enabling them
+                        to effortlessly search for furniture through images and
+                        generate custom pieces from text descriptions using
+                        advanced AI models. <br />
+                        <br />
+                        <a
+                            target="_blank"
+                            href="https://nucleusfox.github.io/furnichanter.html"
+                        >
+                            Learn More.
+                        </a>
                     </Card>
-                    <Card img={blueconduit} heading="Blue Conduit" linkUrl="https://blueconduit.com/">
-                        The Blue Conduit project is a collaboration with the Harvard data science
-                        program. It employs machine learning to predict lead pipe service lines, with 
-                        several models being developed during the Flint Water Crisis. It utilizes a 
-                        diffusion model to enhance predictions. {" "}
-                        <br/><br/>
-                        <a target="_blank" href="https://blueconduit.com/">Learn More.</a>
+                    <Card
+                        img={blueconduit}
+                        heading="Blue Conduit"
+                        linkUrl="https://blueconduit.com/"
+                    >
+                        The Blue Conduit project is a collaboration with the
+                        Harvard data science program. It employs machine
+                        learning to predict lead pipe service lines, with
+                        several models being developed during the Flint Water
+                        Crisis. It utilizes a diffusion model to enhance
+                        predictions. <br />
+                        <br />
+                        <a target="_blank" href="https://blueconduit.com/">
+                            Learn More.
+                        </a>
                     </Card>
                 </div>
             </Section>

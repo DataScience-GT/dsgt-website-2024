@@ -42,11 +42,15 @@ const Navbar = (params) => {
     if (windowWidth >= WIDTH_THRESHOLD) {
         return (
             <div {...params} className={styles.DesktopNavbar}>
-                {params.page != 'home' ? (
-                    <img className={styles.SmallHeroBlob} src={smallblob} alt="blob" />
+                {params.page != "home" ? (
+                    <img
+                        className={styles.SmallHeroBlob}
+                        src={smallblob}
+                        alt="blob"
+                    />
                 ) : (
                     <div></div>
-                )} 
+                )}
                 <div className={styles.NavWrapper}>
                     <div className={styles.NavWrapperFlexLeft}>
                         <img
@@ -115,7 +119,7 @@ const Navbar = (params) => {
         // mobile navbar
         return (
             <div {...params} className={styles.MobileNavbar}>
-                <div className={styles.NavWrapper}>
+                {/* <div className={styles.NavWrapper}>
                     <div className={styles.NavWrapperFlexCenter}>
                         <img
                             className={styles.logo}
@@ -124,7 +128,7 @@ const Navbar = (params) => {
                         />
                         <h1 className={styles.LogoText}>DSGT</h1>
                     </div>
-                </div>
+                </div> */}
                 <input
                     id="hamburger-checkbox"
                     className={styles.HamburgerCheckbox}

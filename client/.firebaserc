@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "dsgt-preview"
-  }
+    "default": "dsgt-preview",
+    "dsgt-website-prod": "dsgt-website"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
