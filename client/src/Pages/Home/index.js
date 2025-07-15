@@ -192,12 +192,12 @@ const Home = (params) => {
                             "Jurassic Park". We look forward to seeing
                             innovative projects inspired by using data as
                             building blocks. Hacklytics 2025 will be held in an
-                            in person format between Feburary 7 through 9, 2025.
+                            in person format between Feburary 20 through 22, 2026.
                         </Mini>
                         <br />
                         <Mini>
                             <LearnMore to="https://hacklytics.io">
-                                Learn more about the upcoming Hacklytics 2025
+                                Learn more about the upcoming Hacklytics 2026
                             </LearnMore>
                         </Mini>
                     </div>
